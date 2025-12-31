@@ -1,9 +1,9 @@
-import ScrollyTelling from "./components/ScrollyTelling";
+import Resume from "./components/Resume";
 
 export default function Home() {
   return (
     <main className="bg-black min-h-screen">
-      <ScrollyTelling />
+      <Resume />
     </main>
   );
 }
