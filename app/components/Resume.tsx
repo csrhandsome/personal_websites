@@ -2,112 +2,92 @@ import React from "react";
 
 export default function Resume() {
   return (
-    <div className="min-h-screen bg-black text-white selection:bg-white/20 font-sans relative">
+    <div className="min-h-screen bg-white text-black font-body relative selection:bg-black selection:text-white overflow-hidden">
+      {/* Global Textures */}
+      <div className="fixed inset-0 pointer-events-none z-0 bg-texture-noise" />
+      <div className="fixed inset-0 pointer-events-none z-0 bg-texture-lines" />
+
       {/* Grid System - Vertical Lines */}
       <div className="fixed inset-0 pointer-events-none z-0">
-        <div className="max-w-7xl mx-auto h-full grid grid-cols-12 gap-0">
+        <div className="max-w-7xl mx-auto h-full grid grid-cols-12 gap-0 border-r border-black/5">
           {[...Array(13)].map((_, i) => (
             <div
               key={i}
-              className="border-l border-white/[0.03] h-full"
+              className="border-l border-black/5 h-full"
               style={{ gridColumn: i + 1 }}
             />
           ))}
         </div>
       </div>
 
-      {/* Horizontal Grid Lines */}
-      <div className="fixed inset-0 pointer-events-none z-0">
-        {[...Array(20)].map((_, i) => (
-          <div
-            key={i}
-            className="border-t border-white/[0.03] w-full"
-            style={{ top: `${i * 5}vh` }}
-          />
-        ))}
-      </div>
-
-      <div className="max-w-7xl mx-auto px-6 py-16 md:py-24 relative z-10">
-        {/* Hero Header - Massive Typography */}
-        <header className="mb-32 md:mb-48 grid grid-cols-12 gap-6 min-h-[70vh] items-center border-b border-white/30 pb-16">
-          <div className="col-span-12 lg:col-span-6 space-y-12">
-            <div className="space-y-8">
-              <div className="text-[7vw] md:text-[8vw] lg:text-[9vw] xl:text-[10vw] leading-[0.85] font-serif font-bold tracking-tighter">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+        {/* Hero Header */}
+        <header className="pt-32 pb-24 md:pt-48 md:pb-32 border-b-4 border-black grid grid-cols-12 gap-6 items-end">
+          <div className="col-span-12 lg:col-span-8">
+            <div className="space-y-6">
+              <h1 className="text-[15vw] lg:text-[10rem] leading-[0.8] font-display font-medium tracking-tighter -ml-1 md:-ml-2">
                 程思睿
-              </div>
-              <div className="text-3xl md:text-5xl lg:text-6xl font-light tracking-wide text-white/60 uppercase font-sans">
+              </h1>
+              <div className="text-3xl md:text-5xl font-display italic tracking-tight text-black border-t border-black pt-6 inline-block">
                 Research Engineer
               </div>
             </div>
           </div>
 
-          <div className="col-span-12 lg:col-span-6 space-y-10 border-l-2 border-white/40 pl-8 lg:pl-10">
+          <div className="col-span-12 lg:col-span-4 flex flex-col justify-end space-y-8 pb-2">
             <div className="space-y-4">
-              <div className="text-[10px] uppercase tracking-[0.3em] text-white/40 font-sans font-bold">
+              <div className="text-[10px] uppercase tracking-[0.2em] font-mono border-b border-black pb-2">
                 Institution
               </div>
-              <div className="text-xl md:text-2xl font-sans text-white/90 leading-relaxed space-y-2">
+              <div className="text-lg md:text-xl font-body leading-snug">
                 <div className="font-bold">南方科技大学</div>
-                <div className="text-lg md:text-xl text-white/70">
-                  创新创意设计学院
-                </div>
-                <div className="text-lg md:text-xl text-white/70">
-                  智能制造与机器人
-                </div>
-                <div className="text-base md:text-lg text-white/50 font-mono pt-2">
-                  2024届研究生
-                </div>
+                <div>创新创意设计学院</div>
+                <div className="italic">智能制造与机器人</div>
+                <div className="font-mono text-sm mt-2 text-neutral-600">2024届研究生</div>
               </div>
             </div>
 
-            <div className="space-y-4 pt-8 border-t border-white/30">
-              <div className="text-[10px] uppercase tracking-[0.3em] text-white/40 font-sans font-bold">
-                Document Info
+            <div className="space-y-4">
+              <div className="text-[10px] uppercase tracking-[0.2em] font-mono border-b border-black pb-2">
+                Last Updated
               </div>
-              <div className="text-base md:text-lg font-mono text-white/60 space-y-1">
-                <div>Last Updated</div>
-                <div className="text-2xl font-bold text-white/80">2025.11</div>
-              </div>
+              <div className="text-xl font-mono font-bold">2025.11</div>
             </div>
           </div>
         </header>
 
-        {/* Sections Container - Swiss Grid Layout */}
-        <div className="space-y-32">
+        {/* Sections Container */}
+        <div className="divide-y-4 divide-black">
           {/* Academic Performance */}
-          <section className="grid grid-cols-12 gap-6 border-t border-white/30 pt-16">
+          <section className="grid grid-cols-12 gap-6 py-24 md:py-32">
             <div className="col-span-12 md:col-span-3">
-              <h2 className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40 font-sans sticky top-24">
-                Academic
-                <br />
-                Performance
+              <h2 className="text-xs font-mono font-bold uppercase tracking-[0.2em] sticky top-8">
+                01 — Academic
               </h2>
             </div>
-            <div className="col-span-12 md:col-span-9 border-l-2 border-white/40 pl-8 space-y-6">
-              <div className="space-y-3">
-                <div className="text-8xl md:text-9xl font-serif font-bold tabular-nums leading-none">
+            <div className="col-span-12 md:col-span-9 space-y-8">
+              <div className="flex flex-col md:flex-row items-baseline gap-4 md:gap-8">
+                <div className="text-9xl md:text-[10rem] font-display font-medium leading-none tracking-tighter">
                   3.58
                 </div>
-                <div className="text-2xl text-white/40 font-mono tracking-wide">
+                <div className="text-xl md:text-2xl font-mono text-neutral-600">
                   / 4.0 GPA
                 </div>
               </div>
-              <div className="text-base text-white/60 font-sans uppercase tracking-widest border-l-4 border-white/60 pl-4">
+              <div className="inline-block border border-black px-6 py-3 text-sm font-mono uppercase tracking-widest bg-black text-white">
                 学院本专业排名第一
               </div>
             </div>
           </section>
 
           {/* Research */}
-          <section className="grid grid-cols-12 gap-6 border-t border-white/30 pt-16">
+          <section className="grid grid-cols-12 gap-6 py-24 md:py-32">
             <div className="col-span-12 md:col-span-3">
-              <h2 className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40 font-sans sticky top-24">
-                Research
-                <br />
-                Projects
+              <h2 className="text-xs font-mono font-bold uppercase tracking-[0.2em] sticky top-8">
+                02 — Research
               </h2>
             </div>
-            <div className="col-span-12 md:col-span-9 border-l-2 border-white/40 pl-8 space-y-12">
+            <div className="col-span-12 md:col-span-9 grid gap-px bg-black border border-black">
               <ProjectItem
                 number="01"
                 title="水下可穿戴外肢体项目"
@@ -153,46 +133,45 @@ export default function Resume() {
           </section>
 
           {/* Awards */}
-          <section className="grid grid-cols-12 gap-6 border-t border-white/30 pt-16">
+          <section className="grid grid-cols-12 gap-6 py-24 md:py-32">
             <div className="col-span-12 md:col-span-3">
-              <h2 className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40 font-sans sticky top-24">
-                Awards &<br />
-                Honors
+              <h2 className="text-xs font-mono font-bold uppercase tracking-[0.2em] sticky top-8">
+                03 — Honors
               </h2>
             </div>
-            <div className="col-span-12 md:col-span-9 border-l-2 border-white/40 pl-8 grid gap-px">
-              <AwardItem
-                number="01"
-                title="国家级一等奖"
-                org="2024-2025 中美青年创客大赛"
-                desc="负责前后端开发及部分硬件工作 (第二获奖人)"
-              />
-              <AwardItem
-                number="02"
-                title="省级一等奖"
-                org="2024-2025 中美青年创客大赛"
-                desc="分赛区选拔"
-              />
-              <AwardItem
-                number="03"
-                title="作品入选参展"
-                org="意大利米兰三年展"
-                desc="课程作品：《工业应用与实践中的设计创新》"
-              />
+            <div className="col-span-12 md:col-span-9">
+              <div className="border-t border-black">
+                <AwardItem
+                  number="01"
+                  title="国家级一等奖"
+                  org="2024-2025 中美青年创客大赛"
+                  desc="负责前后端开发及部分硬件工作 (第二获奖人)"
+                />
+                <AwardItem
+                  number="02"
+                  title="省级一等奖"
+                  org="2024-2025 中美青年创客大赛"
+                  desc="分赛区选拔"
+                />
+                <AwardItem
+                  number="03"
+                  title="作品入选参展"
+                  org="意大利米兰三年展"
+                  desc="课程作品：《工业应用与实践中的设计创新》"
+                />
+              </div>
             </div>
           </section>
 
           {/* Teaching & Service */}
-          <section className="grid grid-cols-12 gap-6 border-t border-white/30 pt-16">
+          <section className="grid grid-cols-12 gap-6 py-24 md:py-32">
             <div className="col-span-12 md:col-span-3">
-              <h2 className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40 font-sans sticky top-24">
-                Teaching &<br />
-                Service
+              <h2 className="text-xs font-mono font-bold uppercase tracking-[0.2em] sticky top-8">
+                04 — Service
               </h2>
             </div>
-            <div className="col-span-12 md:col-span-9 border-l-2 border-white/40 pl-8 space-y-10">
+            <div className="col-span-12 md:col-span-9 space-y-12">
               <ServiceItem
-                number="01"
                 role="教学助理 (TA)"
                 context="南方科技大学"
                 period="一学年"
@@ -202,7 +181,6 @@ export default function Resume() {
               </ServiceItem>
 
               <ServiceItem
-                number="02"
                 role="研究生团支书"
                 context="班级服务"
                 period="2024 - 至今"
@@ -212,7 +190,6 @@ export default function Resume() {
               </ServiceItem>
 
               <ServiceItem
-                number="03"
                 role="公益志愿者"
                 context="志愿服务"
                 period="9.5 小时"
@@ -223,26 +200,26 @@ export default function Resume() {
           </section>
         </div>
 
-        {/* Footer - Swiss Style */}
-        <footer className="mt-40 pt-16 border-t-2 border-white/30 grid grid-cols-12 gap-6">
-          <div className="col-span-12 md:col-span-6 space-y-3">
-            <div className="text-[10px] uppercase tracking-[0.3em] text-white/40 font-sans font-bold">
+        {/* Footer */}
+        <footer className="py-24 border-t-4 border-black grid grid-cols-12 gap-6">
+          <div className="col-span-12 md:col-span-6 space-y-4">
+            <div className="text-xs font-mono font-bold uppercase tracking-[0.2em]">
               Copyright
             </div>
-            <div className="text-base font-mono text-white/60">
+            <div className="text-sm font-mono text-neutral-600">
               程思睿 © 2025
               <br />
               All Rights Reserved
             </div>
           </div>
-          <div className="col-span-12 md:col-span-6 space-y-3">
-            <div className="text-[10px] uppercase tracking-[0.3em] text-white/40 font-sans font-bold">
-              Design System
+          <div className="col-span-12 md:col-span-6 space-y-4">
+            <div className="text-xs font-mono font-bold uppercase tracking-[0.2em]">
+              System
             </div>
-            <div className="text-base font-mono text-white/60">
-              Swiss International Style
+            <div className="text-sm font-mono text-neutral-600">
+              Minimalist Monochrome
               <br />
-              Typographic Grid System
+              Typographic Grid
             </div>
           </div>
         </footer>
@@ -265,36 +242,36 @@ function ProjectItem({
   links?: { label: string; url: string }[];
 }) {
   return (
-    <div className="group border-b border-white/20 pb-10">
+    <div className="group relative bg-white p-8 md:p-12 transition-colors duration-200 hover:bg-black hover:text-white">
       <div className="grid grid-cols-12 gap-4">
-        <div className="col-span-2 md:col-span-1">
-          <div className="text-4xl font-serif font-bold text-white/20 group-hover:text-white/40 transition-colors tabular-nums">
+        <div className="col-span-12 md:col-span-2 mb-4 md:mb-0">
+          <div className="text-xl font-mono text-neutral-400 group-hover:text-neutral-500">
             {number}
           </div>
         </div>
-        <div className="col-span-10 md:col-span-11 space-y-4">
+        <div className="col-span-12 md:col-span-10 space-y-6">
           <div className="space-y-2">
-            <h3 className="text-3xl md:text-4xl font-serif font-bold text-white group-hover:text-white/80 transition-colors leading-tight">
+            <h3 className="text-3xl md:text-4xl font-display font-medium leading-tight">
               {title}
             </h3>
-            <div className="text-xs uppercase tracking-[0.3em] text-white/40 font-sans font-bold">
+            <div className="text-xs font-mono uppercase tracking-[0.2em] opacity-60">
               {subtitle}
             </div>
           </div>
-          <p className="text-white/60 leading-relaxed font-sans text-base md:text-lg">
+          <p className="text-lg font-body leading-relaxed max-w-2xl text-neutral-600 group-hover:text-neutral-300">
             {children}
           </p>
           {links && (
-            <div className="mt-4 flex gap-4">
+            <div className="pt-4 flex gap-6">
               {links.map((link) => (
                 <a
                   key={link.url}
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm uppercase tracking-widest font-sans text-white/40 hover:text-white border-b border-white/30 hover:border-white transition-all pb-0.5"
+                  className="text-xs font-mono uppercase tracking-widest border-b border-black group-hover:border-white pb-1 transition-all hover:opacity-70"
                 >
-                  {link.label} →
+                  {link.label} ↗
                 </a>
               ))}
             </div>
@@ -317,20 +294,22 @@ function AwardItem({
   desc?: string;
 }) {
   return (
-    <div className="border-b border-white/20 py-8 group hover:bg-white/[0.02] transition-colors">
-      <div className="grid grid-cols-12 gap-4">
+    <div className="group border-b border-black py-8 transition-colors hover:bg-black hover:text-white px-4 -mx-4">
+      <div className="grid grid-cols-12 gap-4 items-baseline">
         <div className="col-span-2 md:col-span-1">
-          <div className="text-3xl font-serif font-bold text-white/20 group-hover:text-white/40 transition-colors tabular-nums">
+          <div className="text-sm font-mono text-neutral-400">
             {number}
           </div>
         </div>
-        <div className="col-span-10 md:col-span-11 space-y-3">
-          <div className="text-2xl md:text-3xl font-serif font-bold">{title}</div>
-          <div className="text-xs uppercase tracking-[0.3em] text-white/40 font-sans font-bold">
-            {org}
+        <div className="col-span-10 md:col-span-11 grid md:grid-cols-2 gap-4">
+          <div>
+            <div className="text-2xl md:text-3xl font-display font-medium">{title}</div>
+            <div className="text-xs font-mono uppercase tracking-widest mt-2 opacity-60">
+              {org}
+            </div>
           </div>
           {desc && (
-            <div className="text-sm md:text-base text-white/50 leading-relaxed font-sans pt-1">
+            <div className="text-base font-body text-neutral-600 group-hover:text-neutral-400 flex items-center">
               {desc}
             </div>
           )}
@@ -341,37 +320,30 @@ function AwardItem({
 }
 
 function ServiceItem({
-  number,
   role,
   context,
   period,
   children,
 }: {
-  number: string;
   role: string;
   context: string;
   period: string;
   children: React.ReactNode;
 }) {
   return (
-    <div className="group border-b border-white/20 pb-10">
-      <div className="grid grid-cols-12 gap-4">
-        <div className="col-span-2 md:col-span-1">
-          <div className="text-4xl font-serif font-bold text-white/20 group-hover:text-white/40 transition-colors tabular-nums">
-            {number}
+    <div className="border-t border-black pt-8 pb-4">
+      <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-8">
+        <div className="space-y-1">
+          <div className="text-xs font-mono uppercase tracking-widest text-neutral-500">
+            {period}
           </div>
+          <div className="text-lg font-bold">{context}</div>
         </div>
-        <div className="col-span-10 md:col-span-11 grid md:grid-cols-[240px_1fr] gap-4 md:gap-8">
-          <div className="space-y-2">
-            <div className="font-serif text-2xl md:text-3xl font-bold">{role}</div>
-            <div className="text-xs uppercase tracking-[0.3em] text-white/40 font-sans font-bold">
-              {context}
-            </div>
-            <div className="text-sm font-mono text-white/40 pt-1">{period}</div>
-          </div>
-          <div className="text-white/60 font-sans text-base md:text-lg leading-relaxed">
+        <div className="space-y-4">
+          <h3 className="text-2xl font-display italic">{role}</h3>
+          <p className="text-lg font-body text-neutral-600 leading-relaxed max-w-2xl">
             {children}
-          </div>
+          </p>
         </div>
       </div>
     </div>
